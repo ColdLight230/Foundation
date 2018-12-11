@@ -206,4 +206,14 @@ public class Array<E> {
         System.out.println("Array contains 8: " + arr.contains(8));
     }
     // endregion
+
+    // 交换两个元素位置
+    public void swap(int i, int j) {
+        if (i < 0 || i >= size || j < 0 || j >= size) {
+            throw new IllegalArgumentException("Illegal index");
+        }
+        E t = data[i];
+        data[i] = data[j];
+        data[j] = t;
+    }
 }
