@@ -1,7 +1,5 @@
 package data_structure.heap;
 
-import com.sun.xml.internal.bind.v2.model.core.ID;
-
 import java.util.Random;
 
 import data_structure.array.Array;
@@ -18,6 +16,13 @@ public class MaxHeap<E extends Comparable<E>> {
 
     public MaxHeap() {
         data = new Array<>();
+    }
+
+    public MaxHeap(E[] array) {
+        data = new Array<>(array);
+        for (int i = parent(array.length - 1); i >= 0; i--) {
+            siftDown(i);
+        }
     }
 
     public int size() {
