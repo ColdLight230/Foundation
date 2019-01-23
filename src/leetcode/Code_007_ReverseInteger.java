@@ -25,7 +25,7 @@ import java.util.Stack;
 public class Code_007_ReverseInteger {
 
 
-    public static int reverse(int x) {
+    public static int reverse1(int x) {
         boolean isNegative = x != Math.abs(x);
         x = Math.abs(x);
         Stack<Integer> stack = new Stack<>();
@@ -48,8 +48,18 @@ public class Code_007_ReverseInteger {
         return isNegative ? 0 - res : res;
     }
 
+    // Runtime: 18 ms, faster than 80.73% of Java online submissions for Reverse Integer.
+    public static int reverse(int x) {
+        long result = 0;
+        while (x != 0) {
+            result = 10 * result + x % 10;
+            x /= 10;
+        }
+        return result > Integer.MAX_VALUE || result < Integer.MIN_VALUE ? 0 : (int) result;
+    }
+
     public static void main(String[] args) {
-        System.out.println("" + Integer.MIN_VALUE);
-        System.out.println("" + reverse(Integer.MIN_VALUE));
+        System.out.println("" + 123412);
+        System.out.println("" + reverse(-123412));
     }
 }
