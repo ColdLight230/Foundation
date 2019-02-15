@@ -3,7 +3,7 @@ package leetcode;
 public class Code_021_MergeTwoSortLists {
 
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        // ÀàËÆ¹é²¢ÅÅĞòÖĞµÄºÏ²¢¹ı³Ì
+        // ç±»ä¼¼å½’å¹¶æ’åº
         ListNode dummyHead = new ListNode(0);
         ListNode cur = dummyHead;
         while (l1 != null && l2 != null) {
@@ -17,7 +17,7 @@ public class Code_021_MergeTwoSortLists {
                 l2 = l2.next;
             }
         }
-        // ÈÎÒ»Îª¿Õ£¬Ö±½ÓÁ¬½ÓÁíÒ»ÌõÁ´±í
+        // å½“æœ‰ä¸€æ¡é“¾éå†å®Œçš„æ—¶å€™
         if (l1 == null) {
             cur.next = l2;
         } else {
