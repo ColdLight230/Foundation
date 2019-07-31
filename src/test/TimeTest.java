@@ -8,8 +8,22 @@ import java.util.Locale;
 public class TimeTest {
     public static void main(String[] arg){
 
-        System.out.println(getFriendlyTimeSpanByNow(1514736000000L));
-        System.out.println(getFriendlyTimeSpanByNow(1512057600000L));
+//        System.out.println(getFriendlyTimeSpanByNow(1514736000000L));
+//        System.out.println(getFriendlyTimeSpanByNow(1512057600000L));
+        Calendar instance = Calendar.getInstance();
+        instance.setTimeInMillis(0);
+        System.out.println(instance.getTime());
+        System.out.println(new TimeTest().isBeforeToday(instance));
+    }
+
+    private boolean isBeforeToday(Calendar target){
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(new Date());
+        calendar.set(Calendar.HOUR_OF_DAY, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        System.out.println(calendar.getTime());
+        return target.before(calendar);
     }
 
     public static final String FORMAT_DATE = "yyyy年MM月dd日 HH:mm";
