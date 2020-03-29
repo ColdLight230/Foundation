@@ -95,13 +95,14 @@ public class Code_026_RemoveDuplicatesFromSortedArray {
         return nums.length - count;
     }
 
-    // 执行用时: 15 ms, 在Remove Duplicates from Sorted Array的Java提交中击败了38.32% 的用户
+    // 执行用时: 1 ms, 在Remove Duplicates from Sorted Array的Java提交中击败了99.71% 的用户
+
     public int removeDuplicates(int[] nums) {
         if (nums == null) return 0;
         // 定义一个慢指针i
         int i = 0;
         // 快指针j
-        for (int j = 0; j < nums.length; j++) {
+        for (int j = 1; j < nums.length; j++) {
             if (nums[i] != nums[j]) {
                 i++;
                 nums[i] = nums[j];
