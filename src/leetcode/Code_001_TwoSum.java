@@ -15,11 +15,12 @@ import java.util.HashMap;
  * return [0, 1].
  * */
 public class Code_001_TwoSum {
+    // 执行用时 : 2 ms , 在所有 Java 提交中击败了 99.57% 的用户
     public static int[] twoSum(int[] nums, int target) {
         if (nums == null || nums.length < 1) {
             return null;
         }
-        HashMap<Integer, Integer> map = new HashMap<>();
+        HashMap<Integer, Integer> map = new HashMap<>(nums.length);
         for (int i = 0; i < nums.length; i++) {
             int diff = target - nums[i];
             if (map.containsKey(nums[i])){
