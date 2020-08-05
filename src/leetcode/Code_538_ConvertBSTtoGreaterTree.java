@@ -81,14 +81,4 @@ public class Code_538_ConvertBSTtoGreaterTree {
 
         System.out.println(new Code_538_ConvertBSTtoGreaterTree().convertBST(root));
     }
-
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 }

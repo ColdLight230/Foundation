@@ -87,15 +87,4 @@ public class Code_104_MaximumDepthOfBinaryTree {
         root.right.right.right = new TreeNode(90);
         System.out.println(new Code_104_MaximumDepthOfBinaryTree().maxDepth(root));
     }
-
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
-
 }
